@@ -1,0 +1,23 @@
+.cajita1{
+    background-color: pink;
+    width: 70px;
+    height: 200px;
+}
+.cajita2{
+    background-color: green;
+    width: 70px;
+    height: 200px;
+}
+.cajita3{
+    background-color: rgb(0, 128, 124);
+    width: 70px;
+    height: 200px;
+}
+
+.content{
+background-color: blueviolet;
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+    align-items: center;
+} 

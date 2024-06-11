@@ -1,0 +1,183 @@
+.bod {
+  /* Fondo con degradado radial estilo galaxia */
+  background-color: #7d5f9a;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
+} 
+
+.profile-image-container {
+  width: 270px;
+  height: 270px;
+  margin: 0 auto; 
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background-container {
+  position: relative;
+  height: 60vh;
+  background: url('espa.gif') center center no-repeat;
+  background-size: cover;
+  border: 5px solid white; /* Borde blanco */
+}
+
+.content-container {
+  position: absolute;
+  top: 50%;
+  right: 4%; /* Cambio para ajustar el margen derecho */
+  transform: translate(0, -50%);
+  text-align: right;
+  color: white;
+}
+
+.btn {
+background: #884EA0; /* color de fondo */
+color: #fff; /* color de fuente */
+border: 2px solid #884EA0; /* tamaño y color de borde */
+padding: 16px 20px;
+border-radius: 5px; /* redondear bordes */
+position: relative;
+z-index: 1;
+overflow: hidden;
+display: inline-block;
+}
+.btn:hover {
+color: #884EA0;/* color de fuente hover */
+}
+.btn::after {
+content: "";
+background: #fff; /* color de fondo hover */
+position: absolute;
+z-index: -1;
+padding: 16px 20px;
+display: block;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+transform: scale(0, 0) rotate(-180deg);
+transition: all 0.3s ease;
+}
+.btn:hover::after {
+transition: all 0.3s ease-out;
+transform: scale(1, 1) rotate(0deg);
+}
+
+.cuadro {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.col:nth-child(1) {
+  background-color: #7d5f9a;
+}
+
+.col:nth-child(2) {
+  background-color: #57B5BB; 
+}
+
+.col:nth-child(3) {
+  background-color: #7d5f9a; 
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.con {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.con img {
+  max-width: 300px;
+  height: auto;
+  transition: transform 0.3s;
+  border-radius: 20%;
+}
+
+.con .image-container {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+}
+
+.con .image-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+  border-radius: 10%;
+}
+
+.con .image-container:hover img {
+  opacity: 0;
+}
+
+.con .text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #A569BD;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  border-radius: 10%;
+}
+
+.con .image-container:hover .text-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cua {
+  display: flex;
+}
+
+.colum {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.colum:nth-child(1) {
+  background-color: #7d5f9a; /* Morado */
+}
+
+.colum:nth-child(2) {
+  background-color: #57B5BB; /* Azul */
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}
