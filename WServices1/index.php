@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$dbname = 'id21600436_db_comentar';
-$username = 'id21600436_princessg';
-$password = 'Pp*22040003';
+$dbname = 'wservice_db_comentar';
+$username = 'wservice_princessg';
+$password = 'Pp*22040003*';
 $cnnPDO = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 $cnnPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -26,8 +26,26 @@ if (isset($_POST['registrar']))
     $sql->bindParam(':message', $message);
     $sql->execute();
     unset($sql);
+
+    // Enviar correo electrónico
+    $to = $email;
+    $from = 'wservices0000@wservices.com.mx';
+    $headers = "From: " . $from . "\r\n";
+    $headers .= "Reply-To: " . $from . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+    $mail_subject = "Hemos recibido su comentario";
+    $mail_message = "Hola " . $nombre . ",<br><br>Hemos recibido su comentario y esperamos escuchar más de usted.<br><br>Saludos,<br>WServices";
+
+    if (mail($to, $mail_subject, $mail_message, $headers)) {
+      echo "Correo enviado exitosamente.";
+    } else {
+      echo "Hubo un error al enviar el correo.";
+    }
+
+    header('Location: #testimonials');
+    exit(); // Asegurarse de que el script se detiene después de la redirección
   }
-  header('location:##testimonials');
 }
 
 // Recuperar comentarios de la base de datos
